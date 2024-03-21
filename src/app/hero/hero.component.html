@@ -1,0 +1,341 @@
+<div class="details">
+  <div class="details1">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12" r="12" fill="#2162AC" />
+    </svg>
+    <img class="detailsimg" src="../../assets/Path 2590.png" alt="" />
+  </div>
+  <p id="detailsp">Details/<span id="detailsp1">123456789</span></p>
+</div>
+<div class="viewdetails">
+  <div class="vw1">View Details</div>
+  <div class="vw2">XYZ PACKAGING</div>
+</div>
+
+<div class="container">
+  <!-- supplier info -->
+  <div class="maindiv">
+    <div class="divimg">
+      <img class="divimage" src="../../assets/loremimg.jpg" />
+    </div>
+    <div class="supinfo">
+      <div>
+        <p class="supinfopara">Supplier Information (Shipping)</p>
+      </div>
+
+      <div class="table1">
+        <div class="tb1div">
+          <div class="tb1title">Company Name</div>
+          <div class="helo">{{ supplierInfo.companyName }}</div>
+        </div>
+        <div class="tb1div">
+          <div class="tb1title">Vendor Code</div>
+          <div class="helo">{{ supplierInfo.vendorcode }}</div>
+        </div>
+        <div class="tb1div">
+          <div class="tb1title">Company Address</div>
+          <div class="helo">{{ supplierInfo.companyAddress }}</div>
+        </div>
+        <div class="tb1div">
+          <div class="tb1title">State, Country</div>
+          <div class="helo">{{ supplierInfo.statecountry }}</div>
+        </div>
+        <div class="tb1div">
+          <div class="tb1title">Pkg Person Contact Name</div>
+          <div class="helo">{{ supplierInfo.contactName }}</div>
+        </div>
+        <div class="tb1div">
+          <div class="tb1title">Tel No</div>
+          <div class="helo">{{ supplierInfo.telno }}</div>
+        </div>
+        <div class="tb1div">
+          <div class="tb1title">Email</div>
+          <div class="helo">{{ supplierInfo.email }}</div>
+        </div>
+        <div class="tb1div">
+          <div class="tb1title">Fax No</div>
+          <div class="helo">{{ supplierInfo.faxno }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="maindivfoot">
+    <div class="mdft">
+      <div class="aptype">Approval Type</div>
+      <div class="aptp2">{{ approvData.type }}</div>
+    </div>
+    <div class="mdft">
+      <div class="aptype">Status</div>
+      <div class="aptp2">{{ approvData.status }}</div>
+    </div>
+    <div class="mdft">
+      <div class="aptype">Date Of Approval</div>
+      <div class="aptp2">{{ approvData.date }}</div>
+    </div>
+  </div>
+
+  <!-- 1. Program and Part Information -->
+  <div class="programinfo">
+    <h3>1. Program and Part Information</h3>
+
+    <div class="table1">
+      <div class="tb1div">
+        <div class="tb1title">XYZ Company Receiving Location</div>
+        <div class="helo">{{ programInfo.companyLocation }}</div>
+      </div>
+      <div class="tb1div">
+        <div class="tb1title">ABC Part No.</div>
+        <div class="helo">{{ programInfo.abcpartno }}</div>
+      </div>
+      <div class="tb1div">
+        <div class="tb1title">ABC Part Description</div>
+        <div class="helo">{{ programInfo.abcpartdescr }}</div>
+      </div>
+      <div class="tb1div">
+        <div class="tb1title">Part Weight (Kg)</div>
+        <div class="helo">{{ programInfo.partweight }}</div>
+      </div>
+      <div class="tb1div">
+        <div class="tb1title">Part Dimension (L x W x H) (mm)</div>
+        <div class="helo">{{ programInfo.partdimention }}</div>
+      </div>
+      <div class="tb1div">
+        <div class="tb1title">Annual Volume (Projected)</div>
+        <div class="helo">{{ programInfo.annualvolume }}</div>
+      </div>
+      <div class="tb1div">
+        <div class="tb1title">No. of parts per vehicle</div>
+        <div class="helo">{{ programInfo.noofpartspervehicle }}</div>
+      </div>
+      <div class="tb1div">
+        <div class="tb1title">Models applicable</div>
+        <div class="helo">{{ programInfo.modelsapplicable }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. visual refernce  -->
+  <div class="visualmain">
+    <h3>2. Visual References <span> (part & Packaging)</span></h3>
+
+    <div class="visual">
+      <div>
+        <div class="visualdiv vdiv1">3.1 - Part</div>
+        <div class="visualdiv vdiv2">
+          <img
+            *ngIf="displayImages.img1; else defaultImageDisplay"
+            [src]="displayImages.img1"
+            alt=""
+          />
+          <ng-template #defaultImageDisplay>
+            <img [src]="defaultImage" alt="Default Image" />
+          </ng-template>
+        </div>
+      </div>
+      <div>
+        <div class="visualdiv vdiv1">3.1 - Part</div>
+        <div class="visualdiv vdiv2">
+          <img
+            *ngIf="displayImages.img2; else defaultImageDisplay"
+            [src]="displayImages.img2"
+            alt=""
+          />
+          <ng-template #defaultImageDisplay>
+            <img [src]="defaultImage" alt="Default Image" />
+          </ng-template>
+        </div>
+      </div>
+      <div>
+        <div class="visualdiv vdiv1">3.1 - Part</div>
+        <div class="visualdiv vdiv2">
+          <img
+            *ngIf="displayImages.img3; else defaultImageDisplay"
+            [src]="displayImages.img3"
+            alt=""
+          />
+          <ng-template #defaultImageDisplay>
+            <img [src]="defaultImage" alt="Default Image" />
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Packing Information -->
+
+  <div class="packingmain">
+    <h3>3. Packing Information</h3>
+
+    <div class="packing2">
+      <div>
+        <div class="packingheading">Specifications</div>
+        <div class="packingspecs">Density (Qty of parts)</div>
+        <div class="packingspecs">Packaging Strategy</div>
+        <div class="packingspecs">Carton Code</div>
+        <div class="packingspecs">Carton Type(Design)</div>
+        <div class="packingspecs">Packaging Material Type</div>
+        <div class="packingspecs">Securement / Closure Type</div>
+        <div class="packingspecs">Total Loaded Wt. (Kg - Full)</div>
+        <div class="packingspecs">Outside Dimension (L X W X H) (mm)</div>
+        <div class="packingspecs">Dunnage & Description</div>
+        <div class="packingspecs">Labels (Quantity / Location)</div>
+        <div class="packingspecs">Container Ownership</div>
+      </div>
+      <div>
+        <div class="packingheading phd2">Primary Packaging</div>
+        <div class="packingspecs pp2">{{ primaryPacking.density }}</div>
+        <div class="packingspecs pp2">{{ primaryPacking.strategy }}</div>
+        <div class="packingspecs pp2">{{ primaryPacking.cartoncode }}</div>
+        <div class="packingspecs pp2">{{ primaryPacking.cartontype }}</div>
+        <div class="packingspecs pp2">{{ primaryPacking.materialtype }}</div>
+        <div class="packingspecs pp2">{{ primaryPacking.securement }}</div>
+        <div class="packingspecs pp2">{{ primaryPacking.totalweight }}</div>
+        <div class="packingspecs2 newlayout">
+          <div class="nelp">{{ primaryPacking.outsidedimension[0] }}</div>
+          <div class="nelp">{{ primaryPacking.outsidedimension[1] }}</div>
+          <div class="nelp">{{ primaryPacking.outsidedimension[2] }}</div>
+        </div>
+        <div class="packingspecs2 newlayout">
+          <div class="nelpspace2">{{ primaryPacking.dunnage[0] }}</div>
+          <div class="nelpspace3">{{ primaryPacking.dunnage[1] }}</div>
+        </div>
+        <div class="packingspecs pp2">{{ primaryPacking.labels }}</div>
+        <div class="packingspecs pp2">{{ primaryPacking.container }}</div>
+      </div>
+      <div>
+        <div class="packingheading phd3">Secondary Packaging</div>
+        <div class="packingspecs psp2">{{ secondarypkg.density }}</div>
+        <div class="packingspecs psp2">{{ secondarypkg.strategy }}</div>
+        <div class="packingspecs psp2">{{ secondarypkg.cartoncode }}</div>
+        <div class="packingspecs psp2">{{ secondarypkg.cartontype }}</div>
+        <div class="packingspecs psp2">{{ secondarypkg.materialtype }}</div>
+        <div class="packingspecs psp2">{{ secondarypkg.securement }}</div>
+        <div class="packingspecs gridcontainer psp2">
+          {{ secondarypkg.totalweight }}
+        </div>
+        <div class="packingspecs2 newlayout">
+          <div class="nelp">{{ secondarypkg.outsidedimension[0] }}</div>
+          <div class="nelp">{{ secondarypkg.outsidedimension[1] }}</div>
+          <div class="nelp">{{ secondarypkg.outsidedimension[2] }}</div>
+        </div>
+        <div class="packingspecs2 newlayout">
+          <div class="nelpspace2">{{ secondarypkg.dunnage[0] }}</div>
+          <div class="nelpspace3">{{ secondarypkg.dunnage[1] }}</div>
+        </div>
+        <div class="packingspecs2 newlayout">
+          <div class="nelpspace2">{{ secondarypkg.labels[0] }}</div>
+          <div class="nelpspace3">{{ secondarypkg.labels[1] }}</div>
+        </div>
+        <div class="packingspecs psp2">{{ secondarypkg.container }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Shipping and logistics -->
+  <div class="shippingmain">
+    <h3>4. Shipping & Logistics</h3>
+    <div class="shipping3">
+      <div>
+        <div class="shippingheading">Vehicle type / Size</div>
+        <div class="shippingheading">Pallet Dimension (L X W X H) (mm)</div>
+        <div class="shippingheading">Sec Packaging per transit modes</div>
+        <div class="shippingheading">No of Pry Packs per Sec Packs</div>
+        <div class="shippingheading">Terms</div>
+        <div class="shippingheading">Hazardous Material Class</div>
+        <div class="shippingheading">loop Size (for Returnable)</div>
+        <div class="shippingheading">Life of Returnable Packaging</div>
+        <div class="shippingheading">Unloading & Loading responsibility</div>
+        <div class="shippingheading">Supply at XYZ</div>
+      </div>
+
+      <div class="twocols">
+        <div class="gridchild">
+          <div class="item">Closed XYZ</div>
+          <div class="packingspecs2 newlayout">
+            <div class="nelp">{{ closedXyz.dimentions[0] }}</div>
+            <div class="nelp">{{ closedXyz.dimentions[1] }}</div>
+            <div class="nelp">{{ closedXyz.dimentions[2] }}</div>
+          </div>
+          <div class="item">{{ closedXyz.secPackaging }}</div>
+          <div class="item">{{ closedXyz.noOfPryPacks }}</div>
+          <div class="item">{{ closedXyz.terms }}</div>
+          <div class="item">{{ closedXyz.materialClass }}</div>
+          <div class="item">{{ closedXyz.loopSize }}</div>
+          <div class="item">{{ closedXyz.lifeOfReturn }}</div>
+          <div class="item" id="abcd">{{ closedXyz.unloadingLoading }}</div>
+        </div>
+
+        <div class="gridchild2">
+          <h4 class="item">Theoretical XYZ Utilisation</h4>
+          <h3 class="it2">{{ theoreticalInfo.percentage }}</h3>
+          <!-- <div class="item">
+          <div class="complaint">Complaint (>85%)</div>
+          <div class="complaint">Non-Compliant(85%)</div>
+        </div> -->
+          <div class="packingspecs2 newlayout">
+            <span class="nelp3 textGreen">{{
+              theoreticalInfo.materialClass[0]
+            }}</span>
+            <span class="nelp3 textRed">{{
+              theoreticalInfo.materialClass[1]
+            }}</span>
+          </div>
+          <span class="item it3">Remark</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="theDesingPara">
+    The design by supplier ensures the undamaged part supply till the point of
+    use on the XYZ company.
+  </p>
+
+  <!-- 5. Miscellaneous Comment -->
+  <div class="miscellaneousComment">
+    <h3>5. Miscellaneous Comment</h3>
+    <textarea
+      name="miscComment"
+      id="miscComment"
+      cols="30"
+      rows="10"
+    ></textarea>
+  </div>
+
+  <!-- 6. Approval Information -->
+
+  <div class="approvmain">
+    <h3>6. Approval Information</h3>
+
+    <div class="approvdiv">
+      <div class="ap2">
+        <div class="apheader">Department / Function</div>
+        <div class="apinfo">Packaging Person</div>
+        <div class="apinfo">Packaging Person</div>
+        <div class="apinfo">Packaging Person</div>
+      </div>
+      <div class="ap2">
+        <div class="apheader">Name</div>
+        <div class="apinfo apin2">{{ approvalInfo.names[0] }}</div>
+        <div class="apinfo apin2">{{ approvalInfo.names[1] }}</div>
+        <div class="apinfo apin2">{{ approvalInfo.names[2] }}</div>
+      </div>
+      <div class="ap2">
+        <div class="apheader">Date</div>
+        <div class="apinfo apin2">{{ approvalInfo.dates[0] }}</div>
+        <div class="apinfo apin2">{{ approvalInfo.dates[1] }}</div>
+        <div class="apinfo apin2">{{ approvalInfo.dates[2] }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn">
+    <button>Download</button>
+  </div>
+</div>
