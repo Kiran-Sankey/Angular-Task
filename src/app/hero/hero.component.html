@@ -1,5 +1,5 @@
 <div class="details">
-  <div class="details1">
+  <div class="details1" (click)="navigateBack()">
     <svg
       width="24"
       height="24"
@@ -129,11 +129,16 @@
       <div>
         <div class="visualdiv vdiv1">3.1 - Part</div>
         <div class="visualdiv vdiv2">
-          <img
-            *ngIf="displayImages.img1; else defaultImageDisplay"
-            [src]="displayImages.img1"
-            alt=""
-          />
+          <img [src]="displayImages[0]" alt="" />
+        </div>
+        <ng-template #defaultImageDisplay>
+          <img [src]="defaultImage" alt="Default Image" />
+        </ng-template>
+      </div>
+      <div>
+        <div class="visualdiv vdiv1">3.1 - Part</div>
+        <div class="visualdiv vdiv2">
+          <img [src]="displayImages[1]" alt="" />
           <ng-template #defaultImageDisplay>
             <img [src]="defaultImage" alt="Default Image" />
           </ng-template>
@@ -142,24 +147,7 @@
       <div>
         <div class="visualdiv vdiv1">3.1 - Part</div>
         <div class="visualdiv vdiv2">
-          <img
-            *ngIf="displayImages.img2; else defaultImageDisplay"
-            [src]="displayImages.img2"
-            alt=""
-          />
-          <ng-template #defaultImageDisplay>
-            <img [src]="defaultImage" alt="Default Image" />
-          </ng-template>
-        </div>
-      </div>
-      <div>
-        <div class="visualdiv vdiv1">3.1 - Part</div>
-        <div class="visualdiv vdiv2">
-          <img
-            *ngIf="displayImages.img3; else defaultImageDisplay"
-            [src]="displayImages.img3"
-            alt=""
-          />
+          <img [src]="displayImages[2]" alt="" />
           <ng-template #defaultImageDisplay>
             <img [src]="defaultImage" alt="Default Image" />
           </ng-template>
@@ -322,15 +310,15 @@
       </div>
       <div class="ap2">
         <div class="apheader">Name</div>
-        <div class="apinfo apin2">{{ approvalInfo.names[0] }}</div>
-        <div class="apinfo apin2">{{ approvalInfo.names[1] }}</div>
-        <div class="apinfo apin2">{{ approvalInfo.names[2] }}</div>
+        <div class="apinfo apin2">{{ approvalInform.names[0] }}</div>
+        <div class="apinfo apin2">{{ approvalInform.names[1] }}</div>
+        <div class="apinfo apin2">{{ approvalInform.names[2] }}</div>
       </div>
       <div class="ap2">
         <div class="apheader">Date</div>
-        <div class="apinfo apin2">{{ approvalInfo.dates[0] }}</div>
-        <div class="apinfo apin2">{{ approvalInfo.dates[1] }}</div>
-        <div class="apinfo apin2">{{ approvalInfo.dates[2] }}</div>
+        <div class="apinfo apin2">{{ approvalInform.dates[0] }}</div>
+        <div class="apinfo apin2">{{ approvalInform.dates[1] }}</div>
+        <div class="apinfo apin2">{{ approvalInform.dates[2] }}</div>
       </div>
     </div>
   </div>

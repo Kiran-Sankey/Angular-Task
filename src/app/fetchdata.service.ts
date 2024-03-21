@@ -9,6 +9,11 @@ export class FetchdataService {
   constructor(private http: HttpClient) { }
 
   fetchData(): Observable<object | undefined> {
-    return this.http.get<object>('http://localhost:3000/data');
+    return this.http.get<object>('http://localhost:3000/123456789');
   };
+
+  fetchData2(): Observable<object | undefined> {
+    return this.http.get<object>('http://localhost:3000/123456789');
+  };
+
 }
