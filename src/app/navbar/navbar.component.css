@@ -1,8 +1,8 @@
-.navbar {
+nav {
     display: flex;
 }
 
-.nav {
+.navChild1 {
     width: 20%;
     background-color: white;
     height: 70px;
@@ -13,7 +13,7 @@
     border-right: 1px solid rgb(219 219 219);
 }
 
-.nav2 {
+.navChild2 {
     display: block;
     width: calc(100% - 15%);
     height: 70px;

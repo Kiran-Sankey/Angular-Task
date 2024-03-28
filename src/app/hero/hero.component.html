@@ -1,5 +1,5 @@
-<div class="details">
-  <div class="details1" (click)="navigateBack()">
+<div class="details-id-container">
+  <div class="details-go-back" (click)="navigateBack()">
     <svg
       width="24"
       height="24"
@@ -9,81 +9,102 @@
     >
       <circle cx="12" cy="12" r="12" fill="#2162AC" />
     </svg>
-    <img class="detailsimg" src="../../assets/Path 2590.png" alt="Image" />
+    <img class="go-back-image" src="../../assets/Path 2590.png" alt="Image" />
   </div>
-  <p id="detailsp">
-    Details/<span id="detailsp1">{{ Id }}</span>
+
+  <p id="details-text">
+    Details/<span id="details-id">{{ Id }}</span>
   </p>
 </div>
+
 <div class="viewdetails">
-  <div class="vw1">View Details</div>
-  <div class="vw2">XYZ PACKAGING</div>
+  <div class="view-detail-1">View Details</div>
+  <div class="view-detail-2">XYZ PACKAGING</div>
 </div>
 
 <div class="container">
   <!-- supplier info -->
-  <div class="maindiv">
-    <div class="divimg">
+
+  <div class="supplier-info-parent">
+    <div class="supplier-info-left">
       <img
-        class="divimage"
-        [src]="displayImages[0]"
-        (click)="openModal(displayImages[0])"
+        id="supplier-info-left-image"
+        src="../../assets/loremimg.jpg"
+        alt="Image"
       />
     </div>
-    <div class="supinfo">
+
+    <div class="supplier-info-right">
       <div>
-        <p class="supinfopara">Supplier Information (Shipping)</p>
+        <p class="supplier-info-heading">Supplier Information (Shipping)</p>
       </div>
 
-      <div class="table1">
-        <div class="tb1div">
-          <div class="tb1title">Company Name</div>
-          <div class="helo">{{ supplierInfo?.companyName }}</div>
+      <div class="supplier-info-table-layout">
+        <div class="table-outer-div">
+          <div class="table-outer-div-heading">Company Name</div>
+          <div class="table-outer-div-description">
+            {{ supplierInfo?.companyName }}
+          </div>
         </div>
-        <div class="tb1div">
-          <div class="tb1title">Vendor Code</div>
-          <div class="helo">{{ supplierInfo?.vendorcode }}</div>
+        <div class="table-outer-div">
+          <div class="table-outer-div-heading">Vendor Code</div>
+          <div class="table-outer-div-description">
+            {{ supplierInfo?.vendorcode }}
+          </div>
         </div>
-        <div class="tb1div">
-          <div class="tb1title">Company Address</div>
-          <div class="helo">{{ supplierInfo?.companyAddress }}</div>
+        <div class="table-outer-div">
+          <div class="table-outer-div-heading">Company Address</div>
+          <div class="table-outer-div-description">
+            {{ supplierInfo?.companyAddress }}
+          </div>
         </div>
-        <div class="tb1div">
-          <div class="tb1title">State, Country</div>
-          <div class="helo">{{ supplierInfo?.statecountry }}</div>
+        <div class="table-outer-div">
+          <div class="table-outer-div-heading">State, Country</div>
+          <div class="table-outer-div-description">
+            {{ supplierInfo?.statecountry }}
+          </div>
         </div>
-        <div class="tb1div">
-          <div class="tb1title">Pkg Person Contact Name</div>
-          <div class="helo">{{ supplierInfo?.contactName }}</div>
+        <div class="table-outer-div">
+          <div class="table-outer-div-heading">Pkg Person Contact Name</div>
+          <div class="table-outer-div-description">
+            {{ supplierInfo?.contactName }}
+          </div>
         </div>
-        <div class="tb1div">
-          <div class="tb1title">Tel No</div>
-          <div class="helo">{{ supplierInfo?.telno }}</div>
+        <div class="table-outer-div">
+          <div class="table-outer-div-heading">Tel No</div>
+          <div class="table-outer-div-description">
+            {{ supplierInfo?.telno }}
+          </div>
         </div>
-        <div class="tb1div">
-          <div class="tb1title">Email</div>
-          <div class="helo">{{ supplierInfo?.email }}</div>
+        <div class="table-outer-div">
+          <div class="table-outer-div-heading">Email</div>
+          <div class="table-outer-div-description">
+            {{ supplierInfo?.email }}
+          </div>
         </div>
-        <div class="tb1div">
-          <div class="tb1title">Fax No</div>
-          <div class="helo">{{ supplierInfo?.faxno }}</div>
+        <div class="table-outer-div">
+          <div class="table-outer-div-heading">Fax No</div>
+          <div class="table-outer-div-description">
+            {{ supplierInfo?.faxno }}
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="maindivfoot">
-    <div class="mdft">
-      <div class="aptype">Approval Type</div>
-      <div class="aptp2">{{ approvData?.type }}</div>
+  <!-- approval type status -->
+  <div class="approval-type-status">
+    <div class="approval-type-subdiv">
+      <div class="approval-type-heading">Approval Type</div>
+      <div class="approval-type-description">{{ approvData?.type }}</div>
     </div>
-    <div class="mdft">
-      <div class="aptype">Status</div>
-      <div class="aptp2">{{ approvData?.status }}</div>
+    <div class="approval-type-subdiv">
+      <div class="approval-type-heading">Status</div>
+      <div class="approval-type-description">{{ approvData?.status }}</div>
     </div>
-    <div class="mdft">
-      <div class="aptype">Date Of Approval</div>
-      <div class="aptp2">{{ approvData?.date }}</div>
+    <div class="approval-type-subdiv">
+      <div class="approval-type-heading">Date Of Approval</div>
+      <div class="approval-type-description">{{ approvData?.date }}</div>
     </div>
   </div>
 
@@ -92,37 +113,57 @@
     <h3>1. Program and Part Information</h3>
 
     <div class="table1">
-      <div class="tb1div">
-        <div class="tb1title">XYZ Company Receiving Location</div>
-        <div class="helo">{{ programInfo?.companyLocation }}</div>
+      <div class="table-outer-div">
+        <div class="table-outer-div-heading">
+          XYZ Company Receiving Location
+        </div>
+        <div class="table-outer-div-description">
+          {{ programInfo?.companyLocation }}
+        </div>
       </div>
-      <div class="tb1div">
-        <div class="tb1title">ABC Part No.</div>
-        <div class="helo">{{ programInfo?.abcpartno }}</div>
+      <div class="table-outer-div">
+        <div class="table-outer-div-heading">ABC Part No.</div>
+        <div class="table-outer-div-description">
+          {{ programInfo?.abcpartno }}
+        </div>
       </div>
-      <div class="tb1div">
-        <div class="tb1title">ABC Part Description</div>
-        <div class="helo">{{ programInfo?.abcpartdescr }}</div>
+      <div class="table-outer-div">
+        <div class="table-outer-div-heading">ABC Part Description</div>
+        <div class="table-outer-div-description">
+          {{ programInfo?.abcpartdescr }}
+        </div>
       </div>
-      <div class="tb1div">
-        <div class="tb1title">Part Weight (Kg)</div>
-        <div class="helo">{{ programInfo?.partweight }}</div>
+      <div class="table-outer-div">
+        <div class="table-outer-div-heading">Part Weight (Kg)</div>
+        <div class="table-outer-div-description">
+          {{ programInfo?.partweight }}
+        </div>
       </div>
-      <div class="tb1div">
-        <div class="tb1title">Part Dimension (L x W x H) (mm)</div>
-        <div class="helo">{{ programInfo?.partdimention }}</div>
+      <div class="table-outer-div">
+        <div class="table-outer-div-heading">
+          Part Dimension (L x W x H) (mm)
+        </div>
+        <div class="table-outer-div-description">
+          {{ programInfo?.partdimention }}
+        </div>
       </div>
-      <div class="tb1div">
-        <div class="tb1title">Annual Volume (Projected)</div>
-        <div class="helo">{{ programInfo?.annualvolume }}</div>
+      <div class="table-outer-div">
+        <div class="table-outer-div-heading">Annual Volume (Projected)</div>
+        <div class="table-outer-div-description">
+          {{ programInfo?.annualvolume }}
+        </div>
       </div>
-      <div class="tb1div">
-        <div class="tb1title">No. of parts per vehicle</div>
-        <div class="helo">{{ programInfo?.noofpartspervehicle }}</div>
+      <div class="table-outer-div">
+        <div class="table-outer-div-heading">No. of parts per vehicle</div>
+        <div class="table-outer-div-description">
+          {{ programInfo?.noofpartspervehicle }}
+        </div>
       </div>
-      <div class="tb1div">
-        <div class="tb1title">Models applicable</div>
-        <div class="helo">{{ programInfo?.modelsapplicable }}</div>
+      <div class="table-outer-div">
+        <div class="table-outer-div-heading">Models applicable</div>
+        <div class="table-outer-div-description">
+          {{ programInfo?.modelsapplicable }}
+        </div>
       </div>
     </div>
   </div>
@@ -135,7 +176,11 @@
       <div>
         <div class="visualdiv vdiv1">3.1 - Part</div>
         <div class="visualdiv vdiv2">
-          <img [src]="displayImages[0]" alt="" />
+          <img
+            [src]="displayImages[0]"
+            (click)="openModal(displayImages[0])"
+            alt="Image"
+          />
         </div>
         <!-- <ng-template #defaultImageDisplay>
             <img [src]="defaultImage" alt="Default Image" />
@@ -144,7 +189,11 @@
       <div>
         <div class="visualdiv vdiv1">3.2 - Part</div>
         <div class="visualdiv vdiv2">
-          <img [src]="displayImages[1]" alt="" />
+          <img
+            [src]="displayImages[1]"
+            (click)="openModal(displayImages[1])"
+            alt="Image"
+          />
         </div>
         <!-- <ng-template #defaultImageDisplay>
             <img [src]="defaultImage" alt="Default Image" />
@@ -153,7 +202,11 @@
       <div>
         <div class="visualdiv vdiv1">3.3 - Part</div>
         <div class="visualdiv vdiv2">
-          <img [src]="displayImages[2]" alt="" />
+          <img
+            [src]="displayImages[2]"
+            (click)="openModal(displayImages[2])"
+            alt="Image"
+          />
           <!-- <ng-template #defaultImageDisplay>
               <img [src]="defaultImage" alt="Default Image" />
             </ng-template> -->
@@ -304,24 +357,24 @@
 
   <!-- 6. Approval Information -->
 
-  <div class="approvmain">
+  <div class="approv-info-main-container">
     <h3>6. Approval Information</h3>
 
-    <div class="approvdiv">
-      <div class="ap2">
-        <div class="apheader">Department / Function</div>
+    <div class="approv-info-subcontainer">
+      <div class="approv-info-innerchild">
+        <div class="approv-info-header">Department / Function</div>
         <div class="apinfo">Packaging Person</div>
         <div class="apinfo">Packaging Person</div>
         <div class="apinfo">Packaging Person</div>
       </div>
-      <div class="ap2">
-        <div class="apheader">Name</div>
+      <div class="approv-info-innerchild">
+        <div class="approv-info-header">Name</div>
         <div class="apinfo apin2">{{ approvalInform?.names?.[0] }}</div>
         <div class="apinfo apin2">{{ approvalInform?.names?.[1] }}</div>
         <div class="apinfo apin2">{{ approvalInform?.names?.[2] }}</div>
       </div>
-      <div class="ap2">
-        <div class="apheader">Date</div>
+      <div class="approv-info-innerchild">
+        <div class="approv-info-header">Date</div>
         <div class="apinfo apin2">{{ approvalInform?.dates?.[0] }}</div>
         <div class="apinfo apin2">{{ approvalInform?.dates?.[1] }}</div>
         <div class="apinfo apin2">{{ approvalInform?.dates?.[2] }}</div>
@@ -329,7 +382,7 @@
     </div>
   </div>
 
-  <div class="btn">
-    <button (click)="exportToExcel()" class="downloadButton">Download</button>
+  <div class="download-button-container">
+    <button (click)="exportToExcel()" class="download-button">Download</button>
   </div>
 </div>

@@ -1,4 +1,4 @@
-.tableBody {
+.table-body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,7 @@ button:hover {
     background-color: #7fc0ef;
 }
 
-.displayID {
+.display-id {
     margin: 20px;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@ button:hover {
     font-size: 18px;
 }
 
-.formContainer {
+.form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,13 +48,13 @@ button:hover {
     width: 80%;
 }
 
-.formFields {
+.form-fields {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.formBtn {
+.form-button {
     margin-top: 20px;
     font-size: 15px;
     font-weight: 600px;
@@ -72,7 +72,7 @@ input {
     border-radius: 6px;
 }
 
-.userForm {
+.user-form {
     padding: 20px;
     margin: 100px 0px;
 }
@@ -83,4 +83,18 @@ label {
 
 input::placeholder {
     font-size: 14px;
+}
+
+.display-users {
+    padding: 20px;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.user {
+    border-bottom: 1px solid #dadada;
+    margin-top: 10px;
+    padding: 7px 8px;
+    font-weight: 600;
 }

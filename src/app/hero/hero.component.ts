@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
-import { DisplayIdService } from '../display-id.service';
 import { ActivatedRoute } from '@angular/router';
 import { Approval } from '../response.interface';
 import { SupplierInfo } from '../response.interface';
@@ -11,6 +10,7 @@ import { approvalInfo } from '../response.interface';
 import * as XLSX from 'xlsx';
 import { MatDialog } from '@angular/material/dialog';
 import { ImageModalComponent } from '../image-modal/image-modal.component';
+import { DisplayIdService } from '../service/display-id.service';
 
 @Component({
   selector: 'app-hero',
@@ -67,7 +67,6 @@ export class HeroComponent implements OnInit {
   openModal(imageUrl: string): void {
     const dialogRef = this.dialog.open(ImageModalComponent, {
       width: 'fit-content',
-      maxWidth: '90%',
       data: { imageUrl }
     });
   }
@@ -98,6 +97,6 @@ export class HeroComponent implements OnInit {
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Placeholder');
 
-    XLSX.writeFile(wb, 'UserList.xlsx')
+    XLSX.writeFile(wb, 'UserList.xlsx');
   }
 }

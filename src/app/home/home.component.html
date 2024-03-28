@@ -1,5 +1,5 @@
-<div class="tableBody">
-  <div class="searchBox">
+<div class="table-body">
+  <div class="search-box">
     <input [(ngModel)]="search" type="text" />
     <button (click)="filterData()">Search</button>
     <!-- <p>{{ search }}</p> -->
@@ -9,20 +9,20 @@
     <p>ID</p>
     <p>Show Details</p>
   </div>
-  <div class="displayID" *ngFor="let item of myKeys; let i = index">
+  <div class="display-id" *ngFor="let item of myKeys; let i = index">
     <p>{{ item.id }}</p>
     <button [routerLink]="['/displaydata', item.id]">Show Details</button>
   </div>
 </div>
 
 <!-- create a new user  -->
-<div class="formContainer">
+<div class="form-container">
   <form
-    class="userForm"
+    class="user-form"
     #userForm="ngForm"
     (ngSubmit)="getUserData(userForm.value)"
   >
-    <div class="formFields">
+    <div class="form-fields">
       <label for="firstName">Name</label>
       <input type="text" ngModel name="name" placeholder="Kiran Shinde" />
       <br />
@@ -37,9 +37,12 @@
       <label for="firstName">Password</label>
       <input type="password" ngModel name="password" placeholder="" />
     </div>
-    <button class="formBtn" type="submit">Add User</button>
+    <button class="form-button" type="submit">Add User</button>
   </form>
 </div>
 
+<div class="display-users" *ngFor="let item of displayUsers; let i = index">
+  <p class="user">User {{ i + 1 }} 👉 {{ item.name }}</p>
+</div>
 <!-- <p *ngFor="let name of saveNames">{{ name }}</p>
 <p *ngFor="let company of saveCompany">{{ company }}</p> -->

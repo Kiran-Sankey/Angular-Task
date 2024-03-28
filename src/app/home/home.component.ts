@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { DisplayIdService } from '../display-id.service';
-import { StorePackingService } from '../service/store-movies.service';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
-import { isEmpty } from 'rxjs';
+import { StorePackingService } from '../service/store-ids.service';
+import { ToastrService, IndividualConfig } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
+import { LocalStorageService } from '../service/localstorage.service';
+import { DisplayIdService } from '../service/display-id.service';
 
 @Component({
   selector: 'app-home',
@@ -14,14 +13,13 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
   myKeys: any;
   saveKeys: string[] = [];
-  saveNames: string[] = [];
-  saveCompany: string[] = [];
-  constructor(private route: Router, private makeCall: DisplayIdService, private getPackings: StorePackingService, private toastr: ToastrService, private http: HttpClient) { }
   search: string = '';
+  displayUsers: any;
+
+  constructor(private makeCall: DisplayIdService, private getPackings: StorePackingService, private toastr: ToastrService, private http: HttpClient, private saveToStorage: LocalStorageService) { }
 
   ngOnInit(): void {
     this.getId();
-    // this.getObjectKeys(this.myKeys);
   }
 
   getId() {
@@ -41,12 +39,12 @@ export class HomeComponent implements OnInit {
     );
 
   }
+
   filterData() {
 
     this.myKeys = this.saveKeys;
     console.log("Id to search is : ", this.search);
     console.log("Available keys are : ", this.myKeys);
-
 
     let filteredDataByName = this.myKeys.filter((item: any) => item.id === this.search);
 
@@ -64,14 +62,25 @@ export class HomeComponent implements OnInit {
   }
 
   getUserData(data: { name: string, email: string, password: string }) {
-    console.log(data);
-    this.http.post('http://localhost:5000/users', data).subscribe((res) => {
-      console.log("Data stored successfully..", data);
 
-      this.toastr.success("User saved successfully !!");
+    const toastOptions: Partial<IndividualConfig> = {
+      positionClass: 'toast-bottom-left'
+    };
+
+    console.log(data);
+
+    this.http.post('http://localhost:5000/users', data).subscribe((res) => {
+      console.log("Data stored successfully..", res);
+      this.toastr.success("User saved successfully !!", 'Success', toastOptions);
+      this.saveToStorage.storeEncryptedUserData(data);
+      console.log("The decrypted data is : ", this.saveToStorage.getDecryptedUserData());
+    })
+
+    this.http.get('http://localhost:5000/users').subscribe((res) => {
+      console.log("All the users are : ", res);
+      this.displayUsers = res;
     })
   }
-
 }
 
 
