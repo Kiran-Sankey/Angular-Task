@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "32b9",
+      "name": "kiran",
+      "email": "sindekiran",
+      "password": "234"
+    },
+    {
+      "id": "2ddb",
+      "name": "asif",
+      "email": "mohammadasif",
+      "password": "23"
+    },
+    {
+      "id": "e108",
+      "name": "Meow",
+      "email": "meow@gamil.com",
+      "password": "asdfiwe"
+    },
+    {
+      "id": "0ad8",
+      "name": "Utkarsha Ghatage",
+      "email": "utkarshaghatage1023@gmail.com",
+      "password": "utkarsha1023"
+    },
+    {
+      "id": "772d",
+      "name": "Meow",
+      "email": "meow@gamil.com",
+      "password": "sdfasd"
+    },
+    {
+      "id": "265b",
+      "name": "Sanket",
+      "email": "sanket@gmail.com",
+      "password": "asdlf"
+    },
+    {
+      "id": "0d70",
+      "name": "Aman Patel",
+      "email": "aman@sankeysolutions.com",
+      "password": "asdklfjw"
+    }
+  ]
+}

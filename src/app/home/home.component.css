@@ -1,31 +1,16 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
 .tableBody {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 150px;
+    margin-top: 50px;
     gap: 50px;
-}
-
-th, td {
-    padding: 20px;
-    border: 1px solid #dddddd;
-    text-align: center;
-}
-
-th {
-    background-color: #f2f2f2;
-    text-align: center;
 }
 
 input, button {
     border: none;
     padding: 10px;
+    margin-right: 10px;
 }
 
 button {
@@ -34,4 +19,68 @@ button {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #7fc0ef;
+}
+
+.displayID {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.headings {
+    display: flex;
+    gap: 50px;
+    font-size: 18px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+}
+
+.formFields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formBtn {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600px;
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    border-radius: 6px;
+    background-color: white;
+}
+
+input {
+    border: 1px solid #dadada;
+    border-radius: 6px;
+}
+
+.userForm {
+    padding: 20px;
+    margin: 100px 0px;
+}
+
+label {
+    padding-left: 4px;
+}
+
+input::placeholder {
+    font-size: 14px;
 }

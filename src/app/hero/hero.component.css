@@ -569,4 +569,13 @@ button {
     .visual {
         flex-wrap: wrap;
     }
+
+    .maindivfoot {
+        flex-direction: column;
+    }
+}
+
+.downloadButton:hover {
+    background-color: #05e78a;
+    font-weight: 600;
 }

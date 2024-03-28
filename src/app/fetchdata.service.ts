@@ -12,8 +12,4 @@ export class FetchdataService {
     return this.http.get<object>('http://localhost:3000/123456789');
   };
 
-  fetchData2(): Observable<object | undefined> {
-    return this.http.get<object>('http://localhost:3000/123456789');
-  };
-
 }

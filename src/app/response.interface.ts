@@ -22,3 +22,27 @@ export interface Approval {
     status: string;
     date: string;
 }
+
+export interface programInfo {
+    companyLocation: string,
+    abcpartno: string,
+    abcpartdescr: string,
+    partweight: string,
+    partdimention: string,
+    annualvolume: string,
+    noofpartspervehicle: number,
+    modelsapplicable: string,
+}
+
+export interface Id {
+    id: string
+}
+
+export interface Images {
+    imagesInfo: string[]
+}
+
+export interface approvalInfo {
+    names: string[],
+    dates: string[]
+}

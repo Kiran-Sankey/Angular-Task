@@ -1,29 +1,45 @@
 <div class="tableBody">
   <div class="searchBox">
-    <form action="">
-      <input type="search" />
-      <button>Search</button>
-    </form>
+    <input [(ngModel)]="search" type="text" />
+    <button (click)="filterData()">Search</button>
+    <!-- <p>{{ search }}</p> -->
   </div>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Company</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><p [routerLink]="['/displaydata']">123456789</p></td>
-        <td>Kiran</td>
-        <td>Sankey</td>
-      </tr>
-      <tr>
-        <td><p [routerLink]="['/displaydata']">123456790</p></td>
-        <td>Aman</td>
-        <td>Sankey</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- <div class="headingParent"> -->
+  <div class="headings">
+    <p>ID</p>
+    <p>Show Details</p>
+  </div>
+  <div class="displayID" *ngFor="let item of myKeys; let i = index">
+    <p>{{ item.id }}</p>
+    <button [routerLink]="['/displaydata', item.id]">Show Details</button>
+  </div>
 </div>
+
+<!-- create a new user  -->
+<div class="formContainer">
+  <form
+    class="userForm"
+    #userForm="ngForm"
+    (ngSubmit)="getUserData(userForm.value)"
+  >
+    <div class="formFields">
+      <label for="firstName">Name</label>
+      <input type="text" ngModel name="name" placeholder="Kiran Shinde" />
+      <br />
+      <label for="firstName">Email</label>
+      <input
+        type="email"
+        ngModel
+        name="email"
+        placeholder="xyz@sankeysolutions.com"
+      />
+      <br />
+      <label for="firstName">Password</label>
+      <input type="password" ngModel name="password" placeholder="" />
+    </div>
+    <button class="formBtn" type="submit">Add User</button>
+  </form>
+</div>
+
+<!-- <p *ngFor="let name of saveNames">{{ name }}</p>
+<p *ngFor="let company of saveCompany">{{ company }}</p> -->

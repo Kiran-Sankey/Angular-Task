@@ -9,9 +9,11 @@
     >
       <circle cx="12" cy="12" r="12" fill="#2162AC" />
     </svg>
-    <img class="detailsimg" src="../../assets/Path 2590.png" alt="" />
+    <img class="detailsimg" src="../../assets/Path 2590.png" alt="Image" />
   </div>
-  <p id="detailsp">Details/<span id="detailsp1">123456789</span></p>
+  <p id="detailsp">
+    Details/<span id="detailsp1">{{ Id }}</span>
+  </p>
 </div>
 <div class="viewdetails">
   <div class="vw1">View Details</div>
@@ -22,7 +24,11 @@
   <!-- supplier info -->
   <div class="maindiv">
     <div class="divimg">
-      <img class="divimage" src="../../assets/loremimg.jpg" />
+      <img
+        class="divimage"
+        [src]="displayImages[0]"
+        (click)="openModal(displayImages[0])"
+      />
     </div>
     <div class="supinfo">
       <div>
@@ -32,35 +38,35 @@
       <div class="table1">
         <div class="tb1div">
           <div class="tb1title">Company Name</div>
-          <div class="helo">{{ supplierInfo.companyName }}</div>
+          <div class="helo">{{ supplierInfo?.companyName }}</div>
         </div>
         <div class="tb1div">
           <div class="tb1title">Vendor Code</div>
-          <div class="helo">{{ supplierInfo.vendorcode }}</div>
+          <div class="helo">{{ supplierInfo?.vendorcode }}</div>
         </div>
         <div class="tb1div">
           <div class="tb1title">Company Address</div>
-          <div class="helo">{{ supplierInfo.companyAddress }}</div>
+          <div class="helo">{{ supplierInfo?.companyAddress }}</div>
         </div>
         <div class="tb1div">
           <div class="tb1title">State, Country</div>
-          <div class="helo">{{ supplierInfo.statecountry }}</div>
+          <div class="helo">{{ supplierInfo?.statecountry }}</div>
         </div>
         <div class="tb1div">
           <div class="tb1title">Pkg Person Contact Name</div>
-          <div class="helo">{{ supplierInfo.contactName }}</div>
+          <div class="helo">{{ supplierInfo?.contactName }}</div>
         </div>
         <div class="tb1div">
           <div class="tb1title">Tel No</div>
-          <div class="helo">{{ supplierInfo.telno }}</div>
+          <div class="helo">{{ supplierInfo?.telno }}</div>
         </div>
         <div class="tb1div">
           <div class="tb1title">Email</div>
-          <div class="helo">{{ supplierInfo.email }}</div>
+          <div class="helo">{{ supplierInfo?.email }}</div>
         </div>
         <div class="tb1div">
           <div class="tb1title">Fax No</div>
-          <div class="helo">{{ supplierInfo.faxno }}</div>
+          <div class="helo">{{ supplierInfo?.faxno }}</div>
         </div>
       </div>
     </div>
@@ -69,15 +75,15 @@
   <div class="maindivfoot">
     <div class="mdft">
       <div class="aptype">Approval Type</div>
-      <div class="aptp2">{{ approvData.type }}</div>
+      <div class="aptp2">{{ approvData?.type }}</div>
     </div>
     <div class="mdft">
       <div class="aptype">Status</div>
-      <div class="aptp2">{{ approvData.status }}</div>
+      <div class="aptp2">{{ approvData?.status }}</div>
     </div>
     <div class="mdft">
       <div class="aptype">Date Of Approval</div>
-      <div class="aptp2">{{ approvData.date }}</div>
+      <div class="aptp2">{{ approvData?.date }}</div>
     </div>
   </div>
 
@@ -88,35 +94,35 @@
     <div class="table1">
       <div class="tb1div">
         <div class="tb1title">XYZ Company Receiving Location</div>
-        <div class="helo">{{ programInfo.companyLocation }}</div>
+        <div class="helo">{{ programInfo?.companyLocation }}</div>
       </div>
       <div class="tb1div">
         <div class="tb1title">ABC Part No.</div>
-        <div class="helo">{{ programInfo.abcpartno }}</div>
+        <div class="helo">{{ programInfo?.abcpartno }}</div>
       </div>
       <div class="tb1div">
         <div class="tb1title">ABC Part Description</div>
-        <div class="helo">{{ programInfo.abcpartdescr }}</div>
+        <div class="helo">{{ programInfo?.abcpartdescr }}</div>
       </div>
       <div class="tb1div">
         <div class="tb1title">Part Weight (Kg)</div>
-        <div class="helo">{{ programInfo.partweight }}</div>
+        <div class="helo">{{ programInfo?.partweight }}</div>
       </div>
       <div class="tb1div">
         <div class="tb1title">Part Dimension (L x W x H) (mm)</div>
-        <div class="helo">{{ programInfo.partdimention }}</div>
+        <div class="helo">{{ programInfo?.partdimention }}</div>
       </div>
       <div class="tb1div">
         <div class="tb1title">Annual Volume (Projected)</div>
-        <div class="helo">{{ programInfo.annualvolume }}</div>
+        <div class="helo">{{ programInfo?.annualvolume }}</div>
       </div>
       <div class="tb1div">
         <div class="tb1title">No. of parts per vehicle</div>
-        <div class="helo">{{ programInfo.noofpartspervehicle }}</div>
+        <div class="helo">{{ programInfo?.noofpartspervehicle }}</div>
       </div>
       <div class="tb1div">
         <div class="tb1title">Models applicable</div>
-        <div class="helo">{{ programInfo.modelsapplicable }}</div>
+        <div class="helo">{{ programInfo?.modelsapplicable }}</div>
       </div>
     </div>
   </div>
@@ -131,26 +137,26 @@
         <div class="visualdiv vdiv2">
           <img [src]="displayImages[0]" alt="" />
         </div>
-        <ng-template #defaultImageDisplay>
-          <img [src]="defaultImage" alt="Default Image" />
-        </ng-template>
+        <!-- <ng-template #defaultImageDisplay>
+            <img [src]="defaultImage" alt="Default Image" />
+          </ng-template> -->
       </div>
       <div>
-        <div class="visualdiv vdiv1">3.1 - Part</div>
+        <div class="visualdiv vdiv1">3.2 - Part</div>
         <div class="visualdiv vdiv2">
           <img [src]="displayImages[1]" alt="" />
-          <ng-template #defaultImageDisplay>
-            <img [src]="defaultImage" alt="Default Image" />
-          </ng-template>
         </div>
+        <!-- <ng-template #defaultImageDisplay>
+            <img [src]="defaultImage" alt="Default Image" />
+          </ng-template> -->
       </div>
       <div>
-        <div class="visualdiv vdiv1">3.1 - Part</div>
+        <div class="visualdiv vdiv1">3.3 - Part</div>
         <div class="visualdiv vdiv2">
           <img [src]="displayImages[2]" alt="" />
-          <ng-template #defaultImageDisplay>
-            <img [src]="defaultImage" alt="Default Image" />
-          </ng-template>
+          <!-- <ng-template #defaultImageDisplay>
+              <img [src]="defaultImage" alt="Default Image" />
+            </ng-template> -->
         </div>
       </div>
     </div>
@@ -264,9 +270,9 @@
           <h4 class="item">Theoretical XYZ Utilisation</h4>
           <h3 class="it2">{{ theoreticalInfo.percentage }}</h3>
           <!-- <div class="item">
-          <div class="complaint">Complaint (>85%)</div>
-          <div class="complaint">Non-Compliant(85%)</div>
-        </div> -->
+            <div class="complaint">Complaint (>85%)</div>
+            <div class="complaint">Non-Compliant(85%)</div>
+          </div> -->
           <div class="packingspecs2 newlayout">
             <span class="nelp3 textGreen">{{
               theoreticalInfo.materialClass[0]
@@ -310,20 +316,20 @@
       </div>
       <div class="ap2">
         <div class="apheader">Name</div>
-        <div class="apinfo apin2">{{ approvalInform.names[0] }}</div>
-        <div class="apinfo apin2">{{ approvalInform.names[1] }}</div>
-        <div class="apinfo apin2">{{ approvalInform.names[2] }}</div>
+        <div class="apinfo apin2">{{ approvalInform?.names?.[0] }}</div>
+        <div class="apinfo apin2">{{ approvalInform?.names?.[1] }}</div>
+        <div class="apinfo apin2">{{ approvalInform?.names?.[2] }}</div>
       </div>
       <div class="ap2">
         <div class="apheader">Date</div>
-        <div class="apinfo apin2">{{ approvalInform.dates[0] }}</div>
-        <div class="apinfo apin2">{{ approvalInform.dates[1] }}</div>
-        <div class="apinfo apin2">{{ approvalInform.dates[2] }}</div>
+        <div class="apinfo apin2">{{ approvalInform?.dates?.[0] }}</div>
+        <div class="apinfo apin2">{{ approvalInform?.dates?.[1] }}</div>
+        <div class="apinfo apin2">{{ approvalInform?.dates?.[2] }}</div>
       </div>
     </div>
   </div>
 
   <div class="btn">
-    <button>Download</button>
+    <button (click)="exportToExcel()" class="downloadButton">Download</button>
   </div>
 </div>
