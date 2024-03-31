@@ -29,18 +29,21 @@ export class HeroComponent implements OnInit {
   defaultImage: string = "https://imgs.search.brave.com/neBrELOnsfK49yJraJ6s05kKhr38cFT0UIFls9VbHr4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM0LzgzLzIy/LzM2MF9GXzMzNDgz/MjI1NV9JTXh2ellS/eWdqZDIwVmxTYUlB/RlpyUVdqb3pRSDZC/US5qcGc";
   primaryPacking: any;
   secondarypkg: any;
-  approvalInform: approvalInfo | undefined;
+  approvalInform: any;
   closedXyz: any;
   theoreticalInfo: any;
-
+  formattedDate: string | undefined;
   infoArray: any = [];
   nestedObject = {};
-
+  epochTime: number = 1711703923;
   // userDate = '2024-03-21 12:00:00';
   // parseDate = this.utcDate.transform(this.userDate, 'yyyy-MM-ddTHH:mm:ss.SSSZ', 'UTC');
 
 
-  constructor(private getList: DisplayIdService, private utcDate: DatePipe, private route: Router, private currentRoute: ActivatedRoute, private dialog: MatDialog) { }
+  constructor(private getList: DisplayIdService, private datePipe: DatePipe, private route: Router, private currentRoute: ActivatedRoute, private dialog: MatDialog) {
+
+    this.formattedDate = this.convertEpochToDate(this.epochTime);
+  }
 
   ngOnInit(): void {
 
@@ -49,19 +52,29 @@ export class HeroComponent implements OnInit {
 
     if (Id) {
       this.oneObject = this.getList.fetchDataUsingID(Id);
+
       console.log("I got the details : ", this.oneObject);
       // store the details you want to display
       this.Id = this.oneObject.id;
       this.approvData = this.oneObject.approv;
-      this.supplierInfo = this.oneObject.supplierinfo;
+      this.supplierInfo = this.oneObject.supplierInfo;
       this.displayImages = this.oneObject.imagesInfo;
-      this.programInfo = this.oneObject.programinfo;
-      this.primaryPacking = this.oneObject.primarypkg;
+      this.programInfo = this.oneObject.programInfo;
+      this.primaryPacking = this.oneObject.primaryPkg;
       this.secondarypkg = this.oneObject.secondarypkg;
       this.closedXyz = this.oneObject.shoppingLogsClosedXyz;
       this.theoreticalInfo = this.oneObject.theoreticalXyz;
       this.approvalInform = this.oneObject.approvalInfo;
+      // this.formattedDate = this.datePipe.transform(this.approvData?.date * 1000, 'YYYY/MM/DD');
+
+
+      console.log(this.Id, this.approvData, this.supplierInfo, this.displayImages,)
     }
+  }
+
+  convertEpochToDate(epoch: number): string {
+    const date = new Date(epoch * 1000); // Convert seconds to milliseconds
+    return date.toLocaleString(); // Customize the output format as per your requirement
   }
 
   openModal(imageUrl: string): void {
@@ -69,6 +82,7 @@ export class HeroComponent implements OnInit {
       width: 'fit-content',
       data: { imageUrl }
     });
+
   }
 
   navigateBack() {
@@ -76,7 +90,6 @@ export class HeroComponent implements OnInit {
   }
 
   exportToExcel() {
-
     console.log(this.oneObject);
     this.nestedObject = {
       'dimentino[0]': this.closedXyz.dimentions[0],
@@ -99,4 +112,5 @@ export class HeroComponent implements OnInit {
 
     XLSX.writeFile(wb, 'UserList.xlsx');
   }
+
 }

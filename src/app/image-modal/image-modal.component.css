@@ -4,6 +4,7 @@
 .modal-container {
     position: fixed;
     top: 50%;
+    border: 1px solid #dadada;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 5px 5px 15px #b3b3b3;
@@ -19,12 +20,14 @@
 
 .center-image {
     text-align: center;
+    margin-top: 10px;
 }
 
 .close-button {
-    position: absolute;
+    position: relative;
     top: 0px;
-    right: 0px;
+    right: 50%;
+    left: 107px;
     border: none;
     background-color: lightseagreen;
     padding: 5px 20px;

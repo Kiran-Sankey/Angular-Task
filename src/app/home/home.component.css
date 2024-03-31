@@ -5,12 +5,14 @@
     justify-content: center;
     margin-top: 50px;
     gap: 50px;
+    font-family: Open sans;
 }
 
 input, button {
     border: none;
     padding: 10px;
     margin-right: 10px;
+    font-family: Open sans;
 }
 
 button {
@@ -19,6 +21,7 @@ button {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    font-family: Open sans;
 }
 
 button:hover {
@@ -52,6 +55,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
 }
 
 .form-button {
@@ -65,6 +69,7 @@ form {
     width: 100%;
     border-radius: 6px;
     background-color: white;
+    font-family: Open sans;
 }
 
 input {
@@ -88,8 +93,8 @@ input::placeholder {
 .display-users {
     padding: 20px;
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
+    font-family: Open sans;
 }
 
 .user {
@@ -98,3 +103,19 @@ input::placeholder {
     padding: 7px 8px;
     font-weight: 600;
 }
+
+.currentUser {
+    border-bottom: 1px solid #dadada;
+    margin-top: 10px;
+    padding: 7px 8px;
+    font-weight: 500;
+}
+
+.current-user-parent {
+    padding: 20px;
+    width: 100%;
+    font-size: 15px;
+    font-family: Open sans;
+}
+
+@media (max-width: 650px) {}

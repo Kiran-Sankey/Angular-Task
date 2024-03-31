@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
-import { json } from 'stream/consumers';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalStorageService {
+
+  secretKey: string = '33kiruu_#shinde16@86';
 
   constructor() { }
 
@@ -17,25 +18,22 @@ export class LocalStorageService {
       password: this.encryptData(data.password)
     };
 
-    // Store the encrypted data in local storage
-    localStorage.setItem('encryptedUserData', JSON.stringify(encryptedData));
+    console.log("encrypted user is : ", encryptedData);
 
-    // const currentUser = localStorage.getItem('encryptedUserData');
+    const getCurrent: any = localStorage.getItem('encryptedUserData');
+    let newUser = JSON.parse(getCurrent);
 
-    // if (currentUser != null) {
-    //   const users = JSON.parse(currentUser);
-    //   users.push(encryptedData);
-    //   console.log('new user is : ', users);
-    // }
-    // else {
-    //   const user = [];
-    //   user.push(encryptedData);
-    //   localStorage.setItem('encryptedUserData', JSON.stringify(user));
-    // }
+    if (newUser != null) {
+      newUser.push(encryptedData);
+      // Store the encrypted data in local storage
+      localStorage.setItem('encryptedUserData', JSON.stringify(newUser));
+    }
+    else {
+      localStorage.setItem('encryptedUserData', JSON.stringify(encryptedData));
+    }
   }
 
   getDecryptedUserData(): { name: string, email: string, password: string } | null {
-    // Retrieve encrypted data from local storage
     const encryptedDataString = localStorage.getItem('encryptedUserData');
 
 
@@ -44,6 +42,7 @@ export class LocalStorageService {
     if (encryptedDataString) {
       // Decrypt each field of the encrypted data object
       const encryptedData = JSON.parse(encryptedDataString);
+
       return {
         name: this.decryptData(encryptedData.name),
         email: this.decryptData(encryptedData.email),
@@ -55,15 +54,12 @@ export class LocalStorageService {
   }
 
   private encryptData(data: string): string {
-    // Replace 'YourSecretKey' with your actual secret key
-    const secretKey = '33kiruu_#shinde16@86';
-    return CryptoJS.AES.encrypt(data, secretKey).toString();
+    return CryptoJS.AES.encrypt(data, this.secretKey).toString();
   }
 
   private decryptData(encryptedData: string): string {
-    // Replace 'YourSecretKey' with your actual secret key
-    const secretKey = '33kiruu_#shinde16@86';
-    const bytes = CryptoJS.AES.decrypt(encryptedData, secretKey);
+    const bytes = CryptoJS.AES.decrypt(encryptedData, this.secretKey);
     return bytes.toString(CryptoJS.enc.Utf8);
   }
+
 }

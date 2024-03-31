@@ -1,10 +1,70 @@
+/* Details and Id section */
+
+.go-back-image {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    left: -20px;
+    opacity: 0px;
+}
+
+
+#details-text {
+    color: #2162AC;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.51px;
+    text-align: left;
+}
+
+#details-id {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.51px;
+    text-align: left;
+
+}
+
+
+.details-go-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details-id-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f1f1f1;
+    margin-left: -17px;
+}
+
+.details-id-container:hover {
+    cursor: pointer;
+}
+
+/* Main container  */
+.container {
+    outline: 2px solid #ebebeb;
+    margin-top: 8px;
+    background: white;
+}
+
+
+/* view details and xyz packging section */
+
 .viewdetails {
     width: 100%;
-    background-color: white;
-    gap: 35px;
+    background-color: #F1F1F1;
+    gap: 20px;
     display: flex;
     /* padding: 11px 67px; */
-    font-family: sans-serif;
+    font-family: open Sans;
     font-size: 15px;
 }
 
@@ -13,7 +73,7 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    width: 20%;
+    width: 35%;
     /* padding: 12px; */
     /* height: 70px; */
     font-size: larger;
@@ -33,43 +93,15 @@
     color: #a6acb3;
     padding: 16px;
     font-size: larger;
-}
-
-.details-id-container {
-    font-family: sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding-left: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #f1f1f1;
-}
-
-.container {
-    background: white;
-}
-
-.go-back-image {
-    position: relative;
-    width: 16px;
-    height: 16px;
-    top: -4px;
-    left: -20px;
-    opacity: 0px;
-}
-
-
-#details-text {
-    font-size: 18 px;
-    line-height: 24.51px;
+    font-family: Open Sans;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27.24px;
     text-align: left;
-    color: #2162AC;
+    color: #4E4E4E;
 }
 
-#details-id {
-    font-weight: bold;
-}
+/* Supplier info section */
 
 .supplier-info-parent {
     width: 100%;
@@ -77,7 +109,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 77px;
 }
 
 .supplier-info-right {
@@ -88,11 +120,24 @@
 }
 
 .supplier-info-heading {
-
     font-size: 18px;
     font-weight: 600;
     line-height: 24.51px;
     text-align: left;
+    color: #27292F;
+}
+
+.supplier-info-heading span {
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: left;
+
+}
+
+.supplier-info-left {
+    margin-left: 72px;
 }
 
 #supplier-info-left-image {
@@ -103,6 +148,9 @@
     gap: 0px;
 }
 
+.table {
+    width: 100%;
+}
 
 .supplier-info-table-layout {
     width: 100%;
@@ -113,58 +161,40 @@
 
 .table-outer-div {
     display: flex;
-    width: 49.55%;
+    width: 49.8%;
     outline: 0.2px solid #d4d9df;
     padding: 8px;
     margin-top: 1px;
     margin-left: 1px;
 }
 
-.theDesingPara {
-    padding: 20px;
-    color: red;
-    size: 14px;
-    font-weight: 400;
-}
 
 .table-outer-div div {
     width: 350px;
 }
 
-.miscellaneousComment {
-    padding: 20px;
-}
-
-#miscComment {
-    margin-top: 10px;
-    border: 1px solid #dadada;
-    width: 100%;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 15px;
-}
 
 .table-outer-div-heading {
     color: #666C84;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;
 }
 
 .table-outer-div-description {
     color: #2162AC;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 21.79px;
     text-align: left;
 }
 
+/* Approval type status */
+
 .approval-type-status {
     width: 100%;
-    padding: 24px;
+    padding: 22px;
     margin-top: 50px;
-    font-family: sans-serif;
     display: flex;
+    justify-content: space-between;
     gap: 80px;
 }
 
@@ -172,81 +202,48 @@
 .approval-type-subdiv {
     display: flex;
     outline: 1px solid #dadada;
+    width: 30%;
 }
 
 .approval-type-heading {
     display: flex;
     color: #666C84;
-    width: 135px;
+    width: fit-content;
     align-items: center;
-    padding-left: 5px;
+    padding-left: 0px;
+    justify-content: space-between;
     font-size: 14px;
     font-weight: 600;
     border-right: 1px solid #dadada;
-    height: 50px;
+    /* height: 50px; */
+    padding: 8px;
 }
 
 .approval-type-description {
     display: flex;
     align-items: center;
     padding-left: 8px;
-    width: 200px;
+    /* width: 200px; */
     font-weight: 600;
     color: #2162AC;
 }
 
-.maindivfoot1 {
-    width: 30%;
-}
 
-/* 
-.outerdiv {
-    display: flex;
-}
-
-.outerdiv div {
-    outline: 0.2px solid #c0c8d1;
-    margin-top: 1px;
-    margin-left: 1px;
-}
-
-.first {
-    width: fit-content;
-}
-
-.second {
-    width: fit-content;
-}
-
-.third {
-    width: fit-content;
-}
-
-.lastchild1 {
-    width: 200px;
-}
-
-.lastchild2 {
-    width: 240px;
-}
-
-.lastchild3 {
-    width: 240px;
-} */
-
-.programinfo {
+.program-part-info {
     width: 100%;
     padding: 20px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.visualmain, .packingmain, .shippingmain {
+.visualmain {
     padding: 20px;
 }
 
-h2 {
-    font-family: sans-serif;
+.packingmain, .shippingmain {
+    padding: 20px;
+    width: 100%;
 }
+
+/* Images section  */
 
 .visual {
     margin-top: 20px;
@@ -259,11 +256,10 @@ h2 {
     padding: 13px;
     margin-top: 1px;
     margin-left: 1px;
-    width: 380px;
+    width: 395px;
 }
 
 .vdiv1 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 19.07px;
@@ -285,249 +281,364 @@ h3 span {
     font-weight: normal;
 }
 
+.visual-ref-heading {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24.51px;
+    text-align: left;
+}
+
+.visual-ref-heading span {
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: left;
+
+}
+
 .vdiv1, .vdiv2 {
     text-align: center;
 }
 
-.packing2, .shipping3 {
-    display: flex;
+.program-part-div {
+    width: 49.8%;
+}
+
+
+/* packing information section */
+
+.packing-dada-heading {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24.51px;
+    text-align: left;
+}
+
+.packingData, .shippingData {
+    padding: 20px;
+}
+
+.packaging-spec-container {
     margin-top: 20px;
+    border: 1px solid #dadada;
 }
 
-.packing2 {
-    margin-top: 20px;
+.packaging-spec-container .column {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
 }
 
-.packingmain, .shippingmain {
-    width: 100%;
-}
-
-.packingheading, .packingspecs, .shippingheading, .logicenter, .grid2 {
-    outline: 0.5px solid #dadada;
-    width: 380px;
-}
-
-.packingheading {
-    font-weight: bold;
+.packaging-spec-container .column div {
+    font-size: 1.2em;
     color: #27292F;
-    position: relative;
+    font-weight: 500;
+    padding: 0.6em;
+    border-right: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    word-wrap: break-word;
+}
+
+.packaging-spec-container .column div:nth-child(2), .packaging-spec-container .column div:nth-child(3) {
+    text-align: center;
+}
+
+.specificationHeader {
+    display: grid;
+    grid-template-columns: 33.33% 66.67%;
+}
+
+.specificationTitle {
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.specificationTitle div, .contentDetail div {
+    padding: 0.6em;
+    border-bottom: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    display: flex;
+    align-items: center;
+}
+
+.packing-info-headers {
+    font-family: Open Sans;
     font-size: 18px;
     font-weight: 500;
     line-height: 24.51px;
     text-align: left;
-    padding: 10px 15px;
+    color: #27292F;
 }
 
-.phd2, .phd3 {
-    text-align: center;
+.specificationTitle div {
+    color: #666C84;
+    font-weight: 400;
+    font-family: Open Sans;
+    font-size: 14px;
+    line-height: 19.07px;
+    text-align: left;
+
 }
 
-.pp2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.contentDetail div {
+    justify-content: center;
+    font-size: 1em;
     color: #2162AC;
-    font-size: 25px;
-    font-weight: 800;
+    font-weight: 500;
 }
 
-.noDataBorder {
-    width: 100%;
+.primaryContent {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.primaryContent .contentDetail:nth-child(2) div {
+    border-right: none;
+}
+
+.contentDetail {
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.rowArray3, .rowArray2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0em !important;
+}
+
+.rowArray3 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.33%;
+    border: none;
+    padding: 0em;
     height: 100%;
-    border: 1px solid red;
+    border-right: 1px solid #dadada !important;
 }
 
-.packingspecs, .shippingheading, .logicenter, .grid2 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 14px;
+.rowArray2 div {
+    border: none;
+    padding: 0em;
+    height: 100%;
+    border-right: 1px solid #dadada !important;
+}
+
+.rowArray2 div:nth-child(1) {
+    flex: 1;
+}
+
+.rowArray2 div:nth-child(2) {
+    flex: 2;
+}
+
+/* shipping data section */
+
+
+.shippingDataContainer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #dadada;
+}
+
+.dataContainer1, .dataContainer {
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.dataContainer div, .dataContainer1 div {
+    border-bottom: 1px solid #dadada;
+    padding: 0.6em;
+    border-right: 1px solid #dadada;
+}
+
+.dataContainer1 div {
+    color: #666C84;
     font-weight: 500;
-    line-height: 19.07px;
-    text-align: left;
-    color: #2162AC;
-    padding: 23px;
+    font-size: 16px;
+    padding-top: 0.8em !important;
 }
 
-.psp2, .logicenter, .grid2 {
-    text-align: center;
-}
-
-.packingspecs2 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 19.07px;
-    text-align: left;
-    color: #2162AC;
-    height: 64px;
-    outline: 1px solid #dadada;
-}
-
-
-.newlayout {
-    position: relative;
+.dataContainer div {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+}
+
+.spanHeading {
+    grid-row: 1/2;
+}
+
+.spanrow1 {
+    grid-row: 2/6;
+}
+
+.spanrow2 {
+    grid-row: 6/7;
+}
+
+.spanrow3 {
+    grid-row: 7/8;
+}
+
+.spanrow4 {
+    grid-row: 8/10;
+}
+
+.rowArrayX, .rowArrayY {
+    display: flex;
     width: 100%;
+    padding: 0em !important;
 }
 
-.logicenter {
-    color: #2162AC;
+.rowArrayX p, .rowArrayY div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #D3D3D3;
+    padding: 0em !important;
+    height: 100%;
+}
+
+.rowArrayX p {
+    width: 33.33%;
+}
+
+.rowArrayY div {
+    width: 50%;
+}
+
+.shippingDataContainer .dataContainer {
+    font-size: 1em;
+    color: slateblue;
     font-weight: 500;
 }
 
-.nelp {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 2px solid #dadada;
-    width: 33%;
-}
-
-.nelp2 {
-    width: 67%;
-}
-
-.nelpspace2 {
-    width: 49%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 2px solid #dadada;
-}
-
-.nelpspace3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: -50px;
-    width: 100%;
-}
-
-.textGreen {
+.spanrow2 div:nth-child(1) {
+    font-size: 1em;
     color: #21AC27;
 }
 
-.textRed {
-    color: red;
+.spanrow2 div:nth-child(2) {
+    font-size: 1em;
+    color: #EE2A2A;
 }
 
-.twocols {
+.spanHeading {
+    color: #27292F;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.shippingDataContainer .dataContainer:nth-child(2) div:nth-child(10) {
+    border-right: none !important;
+    border-bottom: none;
+    justify-content: flex-end;
+}
+
+.shippingDataContainer .dataContainer:nth-child(2) {
+    border-right: none !important;
+}
+
+.shippingText {
+    color: #EE2A2A;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.theDesingPara {
+    margin-top: 20px;
+    color: #EE2A2A;
+    size: 14px;
+    font-weight: 400;
+}
+
+/* -----------------> Misc comment  */
+.miscellaneousComment {
+    padding: 20px;
+}
+
+#miscComment {
+    margin-top: 10px;
+    border: 1px solid #D3D3D3;
     width: 100%;
-    display: flex;
-
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
 }
 
-.gridchild {
-    width: 380px;
-    display: grid;
-    grid-template-rows: repeat(10, 1fr);
-    outline: 1px solid #dadada;
+.misc-comment {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24.51px;
+    text-align: left;
 }
 
-.gridchild2 {
-    width: 380px;
-    display: grid;
-    grid-template-rows: repeat(10, 1fr);
-    outline: 1px solid #dadada;
-}
-
-.item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 63px;
-    color: #2162AC;
-    /* background-color: cyan; */
-    font-weight: normal;
-    outline: 1px solid #dadada;
-}
-
-.item2 {
-    gap: 60px;
-}
-
-.item2 div {
-    width: 86px;
-}
-
-.innerdiv {
-    width: 200px;
-    height: 63px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.it2 {
-    display: grid;
-    grid-row: 2/6;
-    align-items: center;
-    justify-content: center;
-    color: #2162AC;
-    font-weight: normal;
-}
-
-.complaint {
-    border: 1px solid red;
-}
-
-#lastitem {
-    width: 100%;
-}
+/* -----------------> approval information  */
 
 .approv-info-main-container {
     width: 100%;
     padding: 20px;
 }
 
-.approv-info-subcontainer {
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    outline: 1px solid #dadada;
+.approv-header {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24.51px;
+    text-align: left;
+
 }
 
-.nelp3 {
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #dadada;
+    border-bottom: none;
+    border-right: none;
+    margin-top: 20px;
+}
+
+.approv-info-item, .column-heading {
+    text-align: center;
+    height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    outline: 1px solid #dadada;
-    width: 50%;
-}
-
-.approv-info-innerchild {
-    width: 100%;
-    border: 1px solid #dadada;
-}
-
-.approv-info-innerchild div {
-    padding: 10px;
-    outline: 0.2px solid #dadada;
-}
-
-.approv-info-header {
-    color: #27292F;
-    font-size: 14px;
+    justify-content: start;
+    padding-left: 8px;
     font-weight: 500;
-    padding: 13px;
-    line-height: 19.07px;
-}
-
-.apinfo {
-    color: #666C84;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.07px;
-}
-
-.apin2 {
-    color: #2162AC;
     font-size: 16px;
-    font-weight: 500;
+    line-height: 21.79px;
+    border-bottom: 1px solid #dadada;
+    border-right: 1px solid #dadada;
 }
 
+.column-heading {
+    color: #27292F;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19.07px;
+}
+
+.person {
+    color: #666C84;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.07px;
+}
+
+.column3, .column2 {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    color: #2162AC;
+}
+
+/* -------------->  download button */
 .download-button-container {
     width: 100%;
     height: 80px;
@@ -539,7 +650,7 @@ h3 span {
     border-top: 1px solid #dadada;
 }
 
-button {
+.download-button {
     width: 126px;
     height: 35px;
     padding: 8px 20px 8px 20px;
@@ -551,7 +662,17 @@ button {
     border: none;
     cursor: pointer;
     margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
 }
+
+.download-button:hover {
+    background-color: #8cd4b6;
+    font-weight: 600;
+}
+
+/* -----------> responsive code */
 
 @media (max-width: 1150px) {
     .table-outer-div {
@@ -598,7 +719,89 @@ button {
     }
 }
 
-.download-button:hover {
-    background-color: #05e78a;
-    font-weight: 600;
+
+
+@media (max-width: 650px) {
+    .details-id-container {
+        margin-left: 0px;
+    }
+
+    .view-detail-1 {
+        font-size: smaller;
+        width: 55%;
+    }
+
+    .view-detail-2 {
+        font-size: smaller;
+    }
+
+    .supplier-info-right {
+        margin-top: 0px;
+        gap: 0px;
+    }
+
+    .supplier-info-left {
+        margin-left: 0px;
+    }
+
+    .supplier-info-heading {
+        font-size: 16px;
+    }
+
+    .approval-type-status {
+        gap: 15px;
+        margin-top: 0px;
+    }
+
+    .approval-type-heading {
+        font-size: 13px;
+    }
+
+    .approval-type-description {
+        font-size: 14px;
+    }
+
+    .table-outer-div {
+        width: 98%;
+    }
+
+    .supplier-info-heading {
+        font-size: 16px;
+    }
+
+    .supplier-info-table-layout {
+        margin-top: 20px;
+    }
+
+    .program-info-heading {
+        font-size: 16px;
+    }
+
+    .table1 {
+        margin-top: 20px;
+    }
+
+    .visual {
+        gap: 10px;
+    }
+
+    .approval-type-subdiv {
+        width: 100%;
+    }
+
+    .approv-info-item, .column-heading {
+        word-break: break-word;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width:640px) {
+
+    .rowArrayY {
+        flex-direction: column;
+    }
+
+    .spanrow2 div {
+        width: 100%;
+    }
 }

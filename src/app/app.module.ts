@@ -15,10 +15,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ImageModalComponent } from './image-modal/image-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
-// ngxs
+
 import { NgxsModule } from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,4 +49,5 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

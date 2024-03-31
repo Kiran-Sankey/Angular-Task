@@ -1,5 +1,5 @@
 footer {
-    width: 100%;
+    width: 100vw;
     height: 50px;
     background-color: #E1E4E9;
     display: flex;
@@ -8,11 +8,12 @@ footer {
     justify-content: center;
 }
 
-span {
+a {
     color: #3A8AFA;
     padding: 0px 5px;
     cursor: pointer;
     font-size: 18px;
+    text-decoration: none;
 }
 
 @media (max-width: 850px) {

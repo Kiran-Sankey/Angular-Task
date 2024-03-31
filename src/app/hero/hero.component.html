@@ -36,7 +36,9 @@
 
     <div class="supplier-info-right">
       <div>
-        <p class="supplier-info-heading">Supplier Information (Shipping)</p>
+        <p class="supplier-info-heading">
+          Supplier Information <span> (Shipping) </span>
+        </p>
       </div>
 
       <div class="supplier-info-table-layout">
@@ -104,65 +106,68 @@
     </div>
     <div class="approval-type-subdiv">
       <div class="approval-type-heading">Date Of Approval</div>
-      <div class="approval-type-description">{{ approvData?.date }}</div>
+      <div class="approval-type-description">
+        {{ formattedDate?.substring(0, 10) }}
+      </div>
     </div>
   </div>
 
   <!-- 1. Program and Part Information -->
-  <div class="programinfo">
-    <h3>1. Program and Part Information</h3>
 
-    <div class="table1">
-      <div class="table-outer-div">
+  <div class="program-part-info">
+    <p class="supplier-info-heading">1. Program and Part Information</p>
+
+    <div class="supplier-info-table-layout">
+      <div class="table-outer-div program-part-div">
         <div class="table-outer-div-heading">
           XYZ Company Receiving Location
         </div>
         <div class="table-outer-div-description">
-          {{ programInfo?.companyLocation }}
+          {{ supplierInfo?.companyName }}
         </div>
       </div>
-      <div class="table-outer-div">
-        <div class="table-outer-div-heading">ABC Part No.</div>
-        <div class="table-outer-div-description">
-          {{ programInfo?.abcpartno }}
-        </div>
-      </div>
-      <div class="table-outer-div">
-        <div class="table-outer-div-heading">ABC Part Description</div>
-        <div class="table-outer-div-description">
-          {{ programInfo?.abcpartdescr }}
-        </div>
-      </div>
-      <div class="table-outer-div">
-        <div class="table-outer-div-heading">Part Weight (Kg)</div>
-        <div class="table-outer-div-description">
-          {{ programInfo?.partweight }}
-        </div>
-      </div>
-      <div class="table-outer-div">
+      <div class="table-outer-div program-part-div">
         <div class="table-outer-div-heading">
           Part Dimension (L x W x H) (mm)
         </div>
         <div class="table-outer-div-description">
-          {{ programInfo?.partdimention }}
+          {{ supplierInfo?.vendorcode }}
         </div>
       </div>
-      <div class="table-outer-div">
+      <div class="table-outer-div program-part-div">
+        <div class="table-outer-div-heading">ABC Part No.</div>
+        <div class="table-outer-div-description">
+          {{ supplierInfo?.companyAddress }}
+        </div>
+      </div>
+      <div class="table-outer-div program-part-div">
         <div class="table-outer-div-heading">Annual Volume (Projected)</div>
         <div class="table-outer-div-description">
-          {{ programInfo?.annualvolume }}
+          {{ supplierInfo?.statecountry }}
         </div>
       </div>
-      <div class="table-outer-div">
+      <div class="table-outer-div program-part-div">
+        <div class="table-outer-div-heading">ABC Part Description</div>
+        <div class="table-outer-div-description">
+          {{ supplierInfo?.contactName }}
+        </div>
+      </div>
+      <div class="table-outer-div program-part-div">
         <div class="table-outer-div-heading">No. of parts per vehicle</div>
         <div class="table-outer-div-description">
-          {{ programInfo?.noofpartspervehicle }}
+          {{ supplierInfo?.telno }}
         </div>
       </div>
-      <div class="table-outer-div">
+      <div class="table-outer-div program-part-div">
+        <div class="table-outer-div-heading">Part Weight (Kg)</div>
+        <div class="table-outer-div-description">
+          {{ supplierInfo?.email }}
+        </div>
+      </div>
+      <div class="table-outer-div program-part-div">
         <div class="table-outer-div-heading">Models applicable</div>
         <div class="table-outer-div-description">
-          {{ programInfo?.modelsapplicable }}
+          {{ supplierInfo?.faxno }}
         </div>
       </div>
     </div>
@@ -170,7 +175,9 @@
 
   <!-- 2. visual refernce  -->
   <div class="visualmain">
-    <h3>2. Visual References <span> (part & Packaging)</span></h3>
+    <h3 class="visual-ref-heading">
+      2. Visual References <span> (part & Packaging)</span>
+    </h3>
 
     <div class="visual">
       <div>
@@ -216,137 +223,143 @@
   </div>
 
   <!-- 3. Packing Information -->
-
-  <div class="packingmain">
-    <h3>3. Packing Information</h3>
-
-    <div class="packing2">
-      <div>
-        <div class="packingheading">Specifications</div>
-        <div class="packingspecs">Density (Qty of parts)</div>
-        <div class="packingspecs">Packaging Strategy</div>
-        <div class="packingspecs">Carton Code</div>
-        <div class="packingspecs">Carton Type(Design)</div>
-        <div class="packingspecs">Packaging Material Type</div>
-        <div class="packingspecs">Securement / Closure Type</div>
-        <div class="packingspecs">Total Loaded Wt. (Kg - Full)</div>
-        <div class="packingspecs">Outside Dimension (L X W X H) (mm)</div>
-        <div class="packingspecs">Dunnage & Description</div>
-        <div class="packingspecs">Labels (Quantity / Location)</div>
-        <div class="packingspecs">Container Ownership</div>
+  <div class="packingData flex-column">
+    <p class="packing-dada-heading">3. Packaging Information</p>
+    <div class="packaging-spec-container">
+      <div class="column">
+        <div class="packing-info-headers">Specifications</div>
+        <div class="packing-info-headers">Primary Packaging</div>
+        <div class="packing-info-headers">Secondary Packaging</div>
       </div>
-      <div>
-        <div class="packingheading phd2">Primary Packaging</div>
-        <div class="packingspecs pp2">{{ primaryPacking.density }}</div>
-        <div class="packingspecs pp2">{{ primaryPacking.strategy }}</div>
-        <div class="packingspecs pp2">{{ primaryPacking.cartoncode }}</div>
-        <div class="packingspecs pp2">{{ primaryPacking.cartontype }}</div>
-        <div class="packingspecs pp2">{{ primaryPacking.materialtype }}</div>
-        <div class="packingspecs pp2">{{ primaryPacking.securement }}</div>
-        <div class="packingspecs pp2">{{ primaryPacking.totalweight }}</div>
-        <div class="packingspecs2 newlayout">
-          <div class="nelp">{{ primaryPacking.outsidedimension[0] }}</div>
-          <div class="nelp">{{ primaryPacking.outsidedimension[1] }}</div>
-          <div class="nelp">{{ primaryPacking.outsidedimension[2] }}</div>
+
+      <div class="specificationHeader">
+        <div class="specificationTitle">
+          <div>Density (Qty of parts)</div>
+          <div>Packaging Strategy</div>
+          <div>Carton Code</div>
+          <div>Carton Type(Design)</div>
+          <div>Packaging Material Type</div>
+          <div>Securement / Closure Type</div>
+          <div>Total Loaded Wt.(kg - Full)</div>
+          <div>Outside Dimension (L X W X H) (mm)</div>
+          <div>Dunnage & Description</div>
+          <div>Labels (Quantity / Location)</div>
+          <div>Container Ownership</div>
         </div>
-        <div class="packingspecs2 newlayout">
-          <div class="nelpspace2">{{ primaryPacking.dunnage[0] }}</div>
-          <div class="nelpspace3">{{ primaryPacking.dunnage[1] }}</div>
+        <div class="primaryContent">
+          <div class="contentDetail">
+            <div>{{ primaryPacking.density }}</div>
+            <div>{{ primaryPacking.strategy }}</div>
+            <div>{{ primaryPacking.cartoncode }}</div>
+            <div>{{ primaryPacking.cartontype }}</div>
+            <div>{{ primaryPacking.materialtype }}</div>
+            <div>{{ primaryPacking.securement }}</div>
+            <div>{{ primaryPacking.totalweight }}</div>
+            <div class="rowArray3">
+              <div>{{ primaryPacking.outsidedimension[0] }}</div>
+              <div>{{ primaryPacking.outsidedimension[1] }}</div>
+              <div>{{ primaryPacking.outsidedimension[2] }}</div>
+            </div>
+            <div class="rowArray2">
+              <div>{{ primaryPacking.dunnage[0] }}</div>
+              <div>{{ primaryPacking.dunnage[1] }}</div>
+            </div>
+            <div class="rowArray2">
+              <div>{{ primaryPacking.labels[0] }}</div>
+              <div>{{ primaryPacking.labels[1] }}</div>
+            </div>
+            <div>{{ primaryPacking.container }}</div>
+          </div>
+
+          <div class="contentDetail">
+            <div>{{ secondarypkg.density }}</div>
+            <div>{{ secondarypkg.strategy }}</div>
+            <div>{{ secondarypkg.cartoncode }}</div>
+            <div>{{ secondarypkg.cartontype }}</div>
+            <div>{{ secondarypkg.materialtype }}</div>
+            <div>{{ secondarypkg.securement }}</div>
+            <div>{{ secondarypkg.totalweight }}</div>
+            <div class="rowArray3">
+              <div>{{ secondarypkg.outsidedimension[0] }}</div>
+              <div>{{ secondarypkg.outsidedimension[1] }}</div>
+              <div>{{ secondarypkg.outsidedimension[2] }}</div>
+            </div>
+            <div class="rowArray2">
+              <div>
+                <div>{{ secondarypkg.dunnage[0] }}</div>
+                <div>{{ secondarypkg.dunnage[1] }}</div>
+              </div>
+            </div>
+            <div class="rowArray2">
+              <div>
+                <div>{{ secondarypkg.labels[0] }}</div>
+                <div>{{ secondarypkg.labels[1] }}</div>
+              </div>
+            </div>
+            <div>{{ secondarypkg.container }}</div>
+          </div>
         </div>
-        <div class="packingspecs pp2">{{ primaryPacking.labels }}</div>
-        <div class="packingspecs pp2">{{ primaryPacking.container }}</div>
-      </div>
-      <div>
-        <div class="packingheading phd3">Secondary Packaging</div>
-        <div class="packingspecs psp2">{{ secondarypkg.density }}</div>
-        <div class="packingspecs psp2">{{ secondarypkg.strategy }}</div>
-        <div class="packingspecs psp2">{{ secondarypkg.cartoncode }}</div>
-        <div class="packingspecs psp2">{{ secondarypkg.cartontype }}</div>
-        <div class="packingspecs psp2">{{ secondarypkg.materialtype }}</div>
-        <div class="packingspecs psp2">{{ secondarypkg.securement }}</div>
-        <div class="packingspecs gridcontainer psp2">
-          {{ secondarypkg.totalweight }}
-        </div>
-        <div class="packingspecs2 newlayout">
-          <div class="nelp">{{ secondarypkg.outsidedimension[0] }}</div>
-          <div class="nelp">{{ secondarypkg.outsidedimension[1] }}</div>
-          <div class="nelp">{{ secondarypkg.outsidedimension[2] }}</div>
-        </div>
-        <div class="packingspecs2 newlayout">
-          <div class="nelpspace2">{{ secondarypkg.dunnage[0] }}</div>
-          <div class="nelpspace3">{{ secondarypkg.dunnage[1] }}</div>
-        </div>
-        <div class="packingspecs2 newlayout">
-          <div class="nelpspace2">{{ secondarypkg.labels[0] }}</div>
-          <div class="nelpspace3">{{ secondarypkg.labels[1] }}</div>
-        </div>
-        <div class="packingspecs psp2">{{ secondarypkg.container }}</div>
       </div>
     </div>
   </div>
 
   <!-- 4. Shipping and logistics -->
-  <div class="shippingmain">
-    <h3>4. Shipping & Logistics</h3>
-    <div class="shipping3">
-      <div>
-        <div class="shippingheading">Vehicle type / Size</div>
-        <div class="shippingheading">Pallet Dimension (L X W X H) (mm)</div>
-        <div class="shippingheading">Sec Packaging per transit modes</div>
-        <div class="shippingheading">No of Pry Packs per Sec Packs</div>
-        <div class="shippingheading">Terms</div>
-        <div class="shippingheading">Hazardous Material Class</div>
-        <div class="shippingheading">loop Size (for Returnable)</div>
-        <div class="shippingheading">Life of Returnable Packaging</div>
-        <div class="shippingheading">Unloading & Loading responsibility</div>
-        <div class="shippingheading">Supply at XYZ</div>
+  <div class="shippingData flex-column">
+    <p class="heading">4. Shipping & Logistics</p>
+    <div class="shippingDataContainer">
+      <div class="dataContainer1">
+        <div>Vehicle type / Size</div>
+        <div>Pallet Dimension (L X W X H) (mm)</div>
+        <div>Sec Packaging per transit modes</div>
+        <div>No of Pry Packs per Sec Packs</div>
+        <div>Terms</div>
+        <div>Hazardous Material Class</div>
+        <div>loop Size (for Returnable)</div>
+        <div>Life of Returnable Packaging</div>
+        <div>Unloading & Loading responsibility</div>
+        <div>Supply at XYZ</div>
       </div>
 
-      <div class="twocols">
-        <div class="gridchild">
-          <div class="item">Closed XYZ</div>
-          <div class="packingspecs2 newlayout">
-            <div class="nelp">{{ closedXyz.dimentions[0] }}</div>
-            <div class="nelp">{{ closedXyz.dimentions[1] }}</div>
-            <div class="nelp">{{ closedXyz.dimentions[2] }}</div>
-          </div>
-          <div class="item">{{ closedXyz.secPackaging }}</div>
-          <div class="item">{{ closedXyz.noOfPryPacks }}</div>
-          <div class="item">{{ closedXyz.terms }}</div>
-          <div class="item">{{ closedXyz.materialClass }}</div>
-          <div class="item">{{ closedXyz.loopSize }}</div>
-          <div class="item">{{ closedXyz.lifeOfReturn }}</div>
-          <div class="item" id="abcd">{{ closedXyz.unloadingLoading }}</div>
+      <div class="dataContainer">
+        <div>Closed XYZ</div>
+        <div class="rowArrayX">
+          <p>{{ closedXyz.dimentions[0] }}</p>
+          <p>{{ closedXyz.dimentions[1] }}</p>
+          <p>{{ closedXyz.dimentions[2] }}</p>
         </div>
+        <div>{{ closedXyz.secPackaging }}</div>
+        <div>{{ closedXyz.noOfPryPacks }}</div>
+        <div>{{ closedXyz.terms }}</div>
+        <div>{{ closedXyz.materialClass }}</div>
+        <div>{{ closedXyz.loopSize }}</div>
+        <div>{{ closedXyz.lifeOfReturn }}</div>
+        <div>{{ closedXyz.unloadingLoading }}</div>
+        <div>Batch at IOT</div>
+      </div>
 
-        <div class="gridchild2">
-          <h4 class="item">Theoretical XYZ Utilisation</h4>
-          <h3 class="it2">{{ theoreticalInfo.percentage }}</h3>
-          <!-- <div class="item">
-            <div class="complaint">Complaint (>85%)</div>
-            <div class="complaint">Non-Compliant(85%)</div>
-          </div> -->
-          <div class="packingspecs2 newlayout">
-            <span class="nelp3 textGreen">{{
-              theoreticalInfo.materialClass[0]
-            }}</span>
-            <span class="nelp3 textRed">{{
-              theoreticalInfo.materialClass[1]
-            }}</span>
-          </div>
-          <span class="item it3">Remark</span>
+      <div class="dataContainer">
+        <div class="spanHeading">Theoretical XYZ Utilisation</div>
+        <div class="spanrow1">
+          {{ theoreticalInfo.percentage }}
         </div>
+        <div class="rowArrayY spanrow2">
+          <div>{{ theoreticalInfo.materialClass[0] }}</div>
+          <div>{{ theoreticalInfo.materialClass[1] }}</div>
+        </div>
+        <div class="spanrow3">{{ theoreticalInfo.remarkText }}</div>
+        <div class="spanrow4"></div>
       </div>
     </div>
+
+    <p class="theDesingPara">
+      The design by supplier ensures the undamaged part supply till the point of
+      use on the XYZ company.
+    </p>
   </div>
-  <p class="theDesingPara">
-    The design by supplier ensures the undamaged part supply till the point of
-    use on the XYZ company.
-  </p>
 
   <!-- 5. Miscellaneous Comment -->
   <div class="miscellaneousComment">
-    <h3>5. Miscellaneous Comment</h3>
+    <h3 class="misc-comment">5. Miscellaneous Comment</h3>
     <textarea
       name="miscComment"
       id="miscComment"
@@ -358,26 +371,31 @@
   <!-- 6. Approval Information -->
 
   <div class="approv-info-main-container">
-    <h3>6. Approval Information</h3>
+    <h3 class="approv-header">6. Approval Information</h3>
+    <div class="grid-container">
+      <div class="column-heading">Department/Function</div>
+      <div class="column-heading">Name</div>
+      <div class="column-heading">Date</div>
 
-    <div class="approv-info-subcontainer">
-      <div class="approv-info-innerchild">
-        <div class="approv-info-header">Department / Function</div>
-        <div class="apinfo">Packaging Person</div>
-        <div class="apinfo">Packaging Person</div>
-        <div class="apinfo">Packaging Person</div>
+      <!-- Items under column 1 -->
+      <div>
+        <div class="approv-info-item person">Packaging Person</div>
+        <div class="approv-info-item person">Packaging Person</div>
+        <div class="approv-info-item person">Packaging Person</div>
       </div>
-      <div class="approv-info-innerchild">
-        <div class="approv-info-header">Name</div>
-        <div class="apinfo apin2">{{ approvalInform?.names?.[0] }}</div>
-        <div class="apinfo apin2">{{ approvalInform?.names?.[1] }}</div>
-        <div class="apinfo apin2">{{ approvalInform?.names?.[2] }}</div>
+
+      <!-- Items under column 2 -->
+      <div class="column2">
+        <div class="approv-info-item">{{ approvalInform.names[0] }}</div>
+        <div class="approv-info-item">{{ approvalInform.names[1] }}</div>
+        <div class="approv-info-item">{{ approvalInform.names[2] }}</div>
       </div>
-      <div class="approv-info-innerchild">
-        <div class="approv-info-header">Date</div>
-        <div class="apinfo apin2">{{ approvalInform?.dates?.[0] }}</div>
-        <div class="apinfo apin2">{{ approvalInform?.dates?.[1] }}</div>
-        <div class="apinfo apin2">{{ approvalInform?.dates?.[2] }}</div>
+
+      <!-- Items under column 3 -->
+      <div class="column3">
+        <div class="approv-info-item">{{ approvalInform?.dates[0] }}</div>
+        <div class="approv-info-item">{{ approvalInform?.dates[1] }}</div>
+        <div class="approv-info-item">{{ approvalInform?.dates[2] }}</div>
       </div>
     </div>
   </div>
